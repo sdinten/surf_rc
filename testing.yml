@@ -1,0 +1,12 @@
+---
+- name: TiU Playbook example
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Create TiU config file
+      ansible.builtin.copy:
+        dest: /etc/uvt_drs.conf
+        content: "# Test config file"
+        owner: root
+        group: root
+        mode: '0644'
